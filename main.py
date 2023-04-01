@@ -5,7 +5,7 @@ app = Ursina(borderless= False, show_ursina_splash = True)
 
 CAM_spd = 80
 enabled_debug_mode = False
-# creation du sol des axes de debug et du cam_control
+# création du sol des axes de debug et des entity de control camera
 Ground = Entity(model='plane', color= rgb(1, 150, 1), scale_z= 10, scale_x= 10)
 Debug_axes = Entity(model= 'model/axes', texture='texture/axes')
 COnctruction_point = Entity(model='model/contruction_point', texture= 'texture/construction_point')
