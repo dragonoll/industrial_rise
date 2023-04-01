@@ -2,7 +2,7 @@ from ursina import *
 
 app = Ursina(borderless= False, show_ursina_splash = True)
 
-
+# litlt change
 CAM_spd = 80
 enabled_debug_mode = False
 # création du sol des axes de debug et des entity de control camera
