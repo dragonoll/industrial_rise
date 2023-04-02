@@ -2,14 +2,12 @@ from ursina import *
 
 app = Ursina(borderless= False, show_ursina_splash = True)
 
-# litlt change
 CAM_spd = 80
 enabled_debug_mode = False
 # création du sol des axes de debug et des entity de control camera
 Ground = Entity(model='plane', color= rgb(1, 150, 1), scale_z= 10, scale_x= 10)
 Debug_axes = Entity(model= 'model/axes', texture='texture/axes')
 COnctruction_point = Entity(model='model/contruction_point', texture= 'texture/construction_point')
-
 
 #* fonction pour passer du clavier azerty au clavier qwerty, rebind des touches
 def aze_qwe_control():
@@ -57,7 +55,6 @@ Cam_move.parent = Cam_orbit
 def camera_control():
     cam_dir_forward= (Cam_orbit.world_x - camera.world_x, Cam_orbit.world_z - camera.world_z)
     cam_dir_right= (Cam_orbit.world_x - Cam_move.world_x, Cam_orbit.world_z - Cam_move.world_z)
-    
 
     # deplacement en avant en arriere
     Cam_orbit.x += held_keys['z'] *  cam_dir_forward[0] * time.dt
@@ -70,7 +67,6 @@ def camera_control():
     Cam_orbit.z += held_keys['q'] *  cam_dir_right[1] * time.dt
     Cam_orbit.x -= held_keys['d'] *  cam_dir_right[0] * time.dt
     Cam_orbit.z -= held_keys['d'] *  cam_dir_right[1] * time.dt
-    
     
     # rotation orbitale de la camera
     Cam_orbit.rotation_y += held_keys['a'] * CAM_spd * time.dt
@@ -85,15 +81,5 @@ def update():
     debug_mod()
     aze_qwe_control()
     # activation du mode debug
-    
-
-
-
-
-
-
-
-
-    
     
 app.run()
