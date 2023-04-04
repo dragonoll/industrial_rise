@@ -1,8 +1,7 @@
 from ursina import *
 from random import randint
 
-def collect():
-        print('+1 wood')
+
 
 class wood(Entity):
     
@@ -10,9 +9,10 @@ class wood(Entity):
         super().__init__(add_to_scene_entities,
                          model = 'cube',
                          color = color.brown,
-                         position = (randint(-10, 10), 1 ,randint(-10, 10)),
+                         position = (randint(-10, 10), 0.5 ,randint(-10, 10)),
                          collider = 'mesh',
-                         on_click = collect
+                         on_click = None
                          )
     
-    
+def collect():
+        print('+1 wood')

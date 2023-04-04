@@ -1,6 +1,13 @@
 # ___Industrial Rise!___ est un jeux de gestion industrielle, il est inpirer du jeu **"Rise of industry"** et de **"factorio"**
 
 >## __Changelog__ :  
+>>### V 0.2.2
+>>ajout d'un bloc wood et du module object et inventory
+>
+>>### V 0.2.1
+>>creation du module cam  
+apport du model pour le selecteur de case
+>
 >>### V 0.2.0  
 >>ajout d'un pneu destructible lorque que l'on clique dessus  
 ajout d'un bouton quit  

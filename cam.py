@@ -4,17 +4,18 @@ from ursina import *
 Cam_orbit = Entity(model='sphere', color= rgb(255, 255, 255, 100))
 Cam_move = Entity(model='sphere', color= rgb(255, 255, 255, 100), position= (5, 0, 0)) 
 
-# set camera
-CAM_spd = 80
-camera.y = 7
-camera.z = -10
-camera.rotation_x = 34
-camera.rotation_y = 0
-Cam_orbit.rotation_y = 0
-camera.parent = Cam_orbit
-Cam_move.parent = Cam_orbit
+def set_cam():
+    global Cam_move, Cam_orbit, camera
+    camera.y = 7
+    camera.z = -10
+    camera.rotation_x = 34
+    camera.rotation_y = 0
+    Cam_orbit.rotation_y = 0
+    camera.parent = Cam_orbit
+    Cam_move.parent = Cam_orbit
 
 def camera_control():
+    CAM_spd = 80
     cam_dir_forward= (Cam_orbit.world_x - camera.world_x, Cam_orbit.world_z - camera.world_z)
     cam_dir_right= (Cam_orbit.world_x - Cam_move.world_x, Cam_orbit.world_z - Cam_move.world_z)
 
@@ -30,9 +31,6 @@ def camera_control():
     else:
         Cam_orbit.z = 10 if Cam_orbit.z > 10 else -10
 
-        
-    
-    
     # controle pour déplacement de gauche a droite
     Cam_orbit.x += held_keys['q'] *  cam_dir_right[0] * time.dt
     Cam_orbit.z += held_keys['q'] *  cam_dir_right[1] * time.dt
