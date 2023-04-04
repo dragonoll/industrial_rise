@@ -58,7 +58,7 @@ for i in range(2):
     list_mat.append(obj.wood())
     
 for el in list_mat:
-    el.on_click = obj.collect
+    el.on_click = el.collect
 
 cam.set_cam()
 

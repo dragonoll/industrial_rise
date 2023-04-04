@@ -13,6 +13,10 @@ class wood(Entity):
                          collider = 'mesh',
                          on_click = None
                          )
+        self.nb_in_inventory = 0
+        self.max_in_inventory = 50
     
-def collect():
-        print('+1 wood')
+    def collect(self):
+        if self.nb_in_inventory < self.max_in_inventory:
+            self.nb_in_inventory += 1
+        print(self.nb_in_inventory)
